@@ -2,7 +2,9 @@ import apiInstance from "../config/axios";
 
 export const addToCartApi = async (id) => {
   try {
-    const response = await apiInstance.post("/add-to-cart", { productId: id });
+    const response = await apiInstance.post("/api/add-to-cart", {
+      productId: id,
+    });
     // console.log("response: ", response?.data);
     return response.data;
   } catch (error) {
@@ -12,7 +14,7 @@ export const addToCartApi = async (id) => {
 
 export const countAddToCartProductApi = async () => {
   try {
-    const response = await apiInstance.get("/count-addtocart-product");
+    const response = await apiInstance.get("/api/count-addtocart-product");
     // console.log("response: ", response?.data);
     return response.data;
   } catch (error) {
@@ -22,7 +24,7 @@ export const countAddToCartProductApi = async () => {
 
 export const viewCartProductApi = async () => {
   try {
-    const response = await apiInstance.get("/view-cart-product");
+    const response = await apiInstance.get("/api/view-cart-product");
     // console.log("response: ", response?.data);
     return response.data;
   } catch (error) {
@@ -33,7 +35,7 @@ export const viewCartProductApi = async () => {
 export const updateCartProductApi = async (id, qty) => {
   try {
     console.log("quantity: ", qty);
-    const response = await apiInstance.post("/update-cart-product", {
+    const response = await apiInstance.post("/api/update-cart-product", {
       id: id,
       quantity: qty,
     });
@@ -47,7 +49,7 @@ export const updateCartProductApi = async (id, qty) => {
 export const deleteCartProductApi = async (id) => {
   try {
     console.log("id: ", id);
-    const response = await apiInstance.post("/delete-cart-product", {
+    const response = await apiInstance.post("/api/delete-cart-product", {
       id: id,
     });
     // console.log("response: ", response?.data);
@@ -58,7 +60,7 @@ export const deleteCartProductApi = async (id) => {
 };
 export const paymentApi = async (data) => {
   try {
-    const response = await apiInstance.post("/checkout", {
+    const response = await apiInstance.post("/api/checkout", {
       cartItem: data,
     });
 

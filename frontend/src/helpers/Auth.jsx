@@ -2,7 +2,7 @@ import apiInstance from "../config/axios";
 
 export const SignUp = async (data) => {
   try {
-    const response = await apiInstance.post("/sign-up", data);
+    const response = await apiInstance.post("/api/sign-up", data);
     // console.log(res?.response?.data, "555");
     return response.data;
   } catch (error) {
@@ -13,7 +13,7 @@ export const SignUp = async (data) => {
 
 export const Loginapi = async (data) => {
   try {
-    const response = await apiInstance.post("/login", data);
+    const response = await apiInstance.post("/api/login", data);
     return response.data;
   } catch (error) {
     return error;
@@ -22,7 +22,7 @@ export const Loginapi = async (data) => {
 
 export const userDetails = async () => {
   try {
-    const res = await apiInstance.get("/user-details");
+    const res = await apiInstance.get("/api/user-details");
     return res;
   } catch (error) {
     return error;
@@ -31,7 +31,7 @@ export const userDetails = async () => {
 
 export const userLogout = async () => {
   try {
-    const res = await apiInstance.get("/user-logout");
+    const res = await apiInstance.get("/api/user-logout");
     // console.log("first", res.data);
     return res?.data;
   } catch (error) {
@@ -41,7 +41,7 @@ export const userLogout = async () => {
 
 export const allUsersApi = async () => {
   try {
-    const res = await apiInstance.get("/all-users");
+    const res = await apiInstance.get("/api/all-users");
     return res.data;
   } catch (error) {
     return error;
@@ -50,7 +50,7 @@ export const allUsersApi = async () => {
 
 export const updateUserApi = async (data) => {
   try {
-    const res = await apiInstance.put("/update-user", data);
+    const res = await apiInstance.put("/api/update-user", data);
 
     return res.data;
   } catch (error) {
