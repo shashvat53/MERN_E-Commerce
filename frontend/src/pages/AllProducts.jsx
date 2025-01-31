@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UploadProduct from "../components/uploadProduct";
+import UploadProduct from "../components/UploadProduct";
 import { getAllProductApi } from "../helpers/Product";
 import AdminProductCard from "../components/AdminProductCard";
 const AllProducts = () => {
