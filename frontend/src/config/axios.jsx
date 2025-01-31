@@ -1,5 +1,5 @@
 import axios from "axios";
-const backendDomain = "http://localhost:9000/api";
+const backendDomain = import.meta.env.VITE_APP_BACKEND_URL; //"http://localhost:9000/api";
 
 const apiInstance = axios.create({
   baseURL: backendDomain,
