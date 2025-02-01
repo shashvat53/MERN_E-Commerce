@@ -23,8 +23,6 @@ const Cart = () => {
   const fetchData = async () => {
     try {
       const responseData = await viewCartProductApi();
-      // setLoading(false);
-      // console.log(responseData.data);
       setData(responseData.data);
     } catch (error) {
       console.log(error);
@@ -33,10 +31,6 @@ const Cart = () => {
 
   const handleLoading = async () => {
     await fetchData();
-    // console.log("user?._id: ", user?._id);
-    // if (!user?._id) {
-    //   navigate("/");
-    // }
   };
 
   useEffect(() => {
@@ -88,10 +82,10 @@ const Cart = () => {
     }
   };
 
-  const tatolQty = data && data.reduce((pre, curr) => pre + curr?.quantity, 0);
+  const tatolQty = data && data?.reduce((pre, curr) => pre + curr?.quantity, 0);
   const tatolPrice =
     data &&
-    data.reduce(
+    data?.reduce(
       (pre, curr) => pre + curr?.productId?.sellingPrice * curr?.quantity,
       0
     );
@@ -122,7 +116,7 @@ const Cart = () => {
         {/* View product */}
         <div className="w-full max-w-3xl">
           {loading ? (
-            loadinListCart.map((el, index) => (
+            loadinListCart?.map((el, index) => (
               <div
                 key={index + "Loading cart"}
                 className="w-full bg-slate-200 h-32 border my-3 border-slate-300 rounded animate-pulse"
