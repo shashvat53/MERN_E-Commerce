@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-slate-200">
       <div className="container mx-auto  p-4 text-black">
-        <p className="font-bold text-center">Dynamic Coding With Shashvat</p>
+        <p className="font-bold text-center">Made With ❣️ And Shashvat</p>
       </div>
     </div>
   );
